@@ -16,8 +16,10 @@ _global_script_class_icons={
 [application]
 
 config/name="Calculator-Godot"
+run/main_scene="res://Scenes/MainApp.tscn"
 config/icon="res://icon.png"
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_environment="res://default_env.tres"
