@@ -3,46 +3,27 @@
 # @author Antoine Montpetit
 #
 
-extends VBoxContainer
+extends Control
 
 # = VAR = #
 
-var alocatedPourcent = 0 setget setPourcentage, getPourcentage
-var alocatedMoney = 0 
+onready var slider = $CustomSlider
 
-onready var sliderContainer = get_parent()
-onready var pourcentLabel = get_node("Info/PourcentLabel")
-onready var slider = get_node("Info/Slider")
-onready var moneyLabel = get_node("Info/MoneyLabel")
+onready var minLimBar = $CustomSlider/MinLimBar
+onready var maxLimBar = $CustomSlider/MaxLimBar
+onready var maxBar = $CustomSlider/MaxBar
 
-# = FUNC = #
+# = Func = #
 
-# Called went the slider value is changed
-func _on_Slider_value_changed(value):
-	setPourcentage(value)
-	sliderContainer.UpdateBarValues(self)
 
-# Take a pourcentage and Change the bar
-# @param value: the pourcentage [0,1]
-func SetBarValue(value):
-	setPourcentage(value)
-	slider.value = value
-
-# Update the alocated money for the pourcent
-func UpdateMoney():
-	alocatedMoney = sliderContainer.total * alocatedPourcent
-	moneyLabel.text = str(stepify(alocatedMoney, 0.01)) + "$"
+func _process(delta):
 	
-
-# = SETGET = #
-func setPourcentage(value):
-	if(validatePourcent(value)):
-		alocatedPourcent = value
-		UpdateMoney()
-		pourcentLabel.text = str(stepify(alocatedPourcent * 100, 0.01)) + "%"
-
-func getPourcentage():
-	return alocatedPourcent
-
-func validatePourcent(value):
-	return (value >= 0 && value <= 1)
+	# Set Values
+	maxBar.get_node("Value").set_text(str(stepify(slider.Get_Max_Value(), 0.01)) + "$")
+	
+	# Set position
+	var rangeX = slider.get_size().x
+	var rangeV = slider.Get_Max_Value() - slider.Get_Min_Value()
+	
+	minLimBar.position.x = (slider.Get_Min_Limiter() * rangeX) / rangeV
+	maxLimBar.position.x = (slider.Get_Max_Limiter() * rangeX) / rangeV

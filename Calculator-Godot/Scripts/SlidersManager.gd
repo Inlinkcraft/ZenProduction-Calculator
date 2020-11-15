@@ -1,37 +1,42 @@
 
 #
-# @author Antoine Montpetit
+# @author Inlinkcraft
 #
 
 extends VBoxContainer
 
 # = VAR = #
 
-onready var allcath = get_children()
-var total = 1000
+var categoryPrefab = preload("res://Scenes/Category.tscn")
+
+onready var data = $"/root/Node2D"
+
+onready var addButton = $Add
+onready var allSlider = []
 
 # = FUNC = #
 
-func _ready():
-	var basePourcentPerCath = 1 / float(allcath.size())
-	for i in range(allcath.size()):
-		allcath[i].SetBarValue(basePourcentPerCath)
+# Calculate budget
+func _process(delta):
+	var sum = 0;
+	
+	for i in range(allSlider.size()):
+		sum += allSlider[i].Get_Value()
+	
+	data.budgetLeft = data.totalBudget - sum
+	
+	for i in range(allSlider.size()):
+		allSlider[i].Set_Max_Limiter(allSlider[i].Get_Value() + data.budgetLeft)
 
-#User Change a bar value
-#@param from: The slider that change
-func UpdateBarValues(from):
-	if (from == null):
-		return
-	for i in range(allcath.size()):
-		if(allcath[i] != from):
-			var SliderSum = 0
-			for j in range(allcath.size()):
-				if(allcath[j] != allcath[i]):
-					SliderSum += allcath[j].alocatedPourcent
-			allcath[i].SetBarValue(1-SliderSum)
-
-# Update went thge user change the max amount
-func _on_SpinBox_value_changed(value):
-	total = value
-	for i in range(allcath.size()):
-		allcath[i].UpdateMoney()
+# Called went the "Add" button is pressed
+func _on_Add_pressed():
+	var category = categoryPrefab.instance()
+	var slider = category.get_node("CustomSlider")
+	
+	slider.Set_Using_Limiter(true)
+	slider.Set_Max_Value(data.totalBudget)
+	
+	self.rect_size.y += 150
+	self.add_child(category)
+	allSlider.append(slider)
+	self.move_child(addButton,self.get_children().size())
