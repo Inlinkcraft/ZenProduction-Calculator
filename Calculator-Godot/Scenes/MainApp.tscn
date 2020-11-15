@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/InfoScreen.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -27,45 +29,6 @@ VScrollBar/styles/scroll_focus = SubResource( 5 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
-
-[node name="Tabs" type="Control" parent="."]
-margin_left = 106.0
-margin_top = 10.0
-margin_right = 710.0
-margin_bottom = 106.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Tabs1" type="HBoxContainer" parent="Tabs"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Button" type="Button" parent="Tabs/Tabs1"]
-margin_right = 198.0
-margin_bottom = 96.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Button2" type="Button" parent="Tabs/Tabs1"]
-margin_left = 202.0
-margin_right = 401.0
-margin_bottom = 96.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="Button3" type="Button" parent="Tabs/Tabs1"]
-margin_left = 405.0
-margin_right = 604.0
-margin_bottom = 96.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 10.0
@@ -135,4 +98,229 @@ text = "+"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Tabs" type="Control" parent="InteractionSpace/MainTab"]
+margin_left = 96.0
+margin_top = -96.0
+margin_right = 700.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tabs1" type="HBoxContainer" parent="InteractionSpace/MainTab/Tabs"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
+margin_right = 198.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button2" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
+margin_left = 202.0
+margin_right = 401.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button3" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
+margin_left = 405.0
+margin_right = 604.0
+margin_bottom = 96.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ThemeTab" type="Control" parent="InteractionSpace"]
+visible = false
+margin_right = 669.0
+margin_bottom = 885.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="InteractionSpace/ThemeTab"]
+position = Vector2( 284.223, 221.997 )
+texture = ExtResource( 5 )
+
+[node name="Menu" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuTab" type="GridContainer" parent="Menu"]
+margin_left = 15.5
+margin_top = 116.0
+margin_right = 704.5
+margin_bottom = 1550.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainTabButton" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_right = 458.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 227, 227 )
+text = "Main Tab"
+
+[node name="ThemeButton" type="Button" parent="Menu/MenuTab"]
+margin_right = 227.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 227, 227 )
+text = "Theme"
+
+[node name="NothingButton2" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_right = 689.0
+margin_bottom = 227.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton3" type="Button" parent="Menu/MenuTab"]
+margin_top = 231.0
+margin_right = 227.0
+margin_bottom = 458.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton4" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 231.0
+margin_right = 458.0
+margin_bottom = 458.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton5" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_top = 231.0
+margin_right = 689.0
+margin_bottom = 458.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton6" type="Button" parent="Menu/MenuTab"]
+margin_top = 462.0
+margin_right = 227.0
+margin_bottom = 689.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton7" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 462.0
+margin_right = 458.0
+margin_bottom = 689.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton8" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_top = 462.0
+margin_right = 689.0
+margin_bottom = 689.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton9" type="Button" parent="Menu/MenuTab"]
+margin_top = 693.0
+margin_right = 227.0
+margin_bottom = 920.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton10" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 693.0
+margin_right = 458.0
+margin_bottom = 920.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton11" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_top = 693.0
+margin_right = 689.0
+margin_bottom = 920.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton12" type="Button" parent="Menu/MenuTab"]
+margin_top = 924.0
+margin_right = 227.0
+margin_bottom = 1151.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton13" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 924.0
+margin_right = 458.0
+margin_bottom = 1151.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton14" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_top = 924.0
+margin_right = 689.0
+margin_bottom = 1151.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton15" type="Button" parent="Menu/MenuTab"]
+margin_top = 1155.0
+margin_right = 227.0
+margin_bottom = 1382.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton16" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 1155.0
+margin_right = 458.0
+margin_bottom = 1382.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="NothingButton17" type="Button" parent="Menu/MenuTab"]
+margin_left = 462.0
+margin_top = 1155.0
+margin_right = 689.0
+margin_bottom = 1382.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+[connection signal="pressed" from="MenuButton" to="Menu" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/MainTabButton" to="Menu" method="_on_MainTabButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/ThemeButton" to="Menu" method="_on_ThemeButton_pressed"]
