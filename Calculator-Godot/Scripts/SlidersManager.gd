@@ -9,6 +9,7 @@ extends VBoxContainer
 
 var categoryPrefab = preload("res://Scenes/Category.tscn")
 
+onready var themeManager = $"/root/Node2D/InteractionSpace/ThemeTab"
 onready var data = $"/root/Node2D"
 
 onready var addButton = $Add
@@ -35,6 +36,8 @@ func _on_Add_pressed():
 	
 	slider.Set_Using_Limiter(true)
 	slider.Set_Max_Value(data.totalBudget)
+	
+	themeManager.LoadCurThemeFor(category)
 	
 	self.rect_size.y += 150
 	self.add_child(category)

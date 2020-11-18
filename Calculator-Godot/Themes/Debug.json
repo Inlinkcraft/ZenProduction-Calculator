@@ -1,0 +1,18 @@
+{
+
+  "ThemeName" : "Test_Debug",
+
+  "Color": {
+
+    "Main" : [1,1,1,1],
+    "Secondary" : [0,0,0,1],
+    "BarMain" : [0,1,0,1],
+    "BarSecondary" : [1,0,0,1],
+
+    "Background" : [0.25,0.25,0.25,1],
+
+    "Text" : [1,1,1,1]
+
+  }
+
+}

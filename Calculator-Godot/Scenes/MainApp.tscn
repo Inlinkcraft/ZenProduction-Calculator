@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/InfoScreen.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
-[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/tags/ColorTag.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/ThemeTab.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -39,6 +40,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorTag" parent="MenuButton" instance=ExtResource( 5 )]
+tag = 1
+
 [node name="InteractionSpace" type="Control" parent="."]
 margin_left = 10.0
 margin_top = 106.0
@@ -60,13 +64,16 @@ margin_right = 350.0
 margin_bottom = 200.0
 rect_scale = Vector2( 2, 2 )
 text = "
-Budjet : 1000 $
+Budget : 1000 $
   
 "
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/InfoScreen" instance=ExtResource( 5 )]
+tag = 6
 
 [node name="ScrollContainer" type="ScrollContainer" parent="InteractionSpace/MainTab"]
 anchor_right = 1.0
@@ -99,6 +106,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="ColorTag" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" instance=ExtResource( 5 )]
+tag = 1
+
 [node name="Tabs" type="Control" parent="InteractionSpace/MainTab"]
 margin_left = 96.0
 margin_top = -96.0
@@ -123,12 +133,18 @@ margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button" instance=ExtResource( 5 )]
+tag = 1
+
 [node name="Button2" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 202.0
 margin_right = 401.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2" instance=ExtResource( 5 )]
+tag = 1
 
 [node name="Button3" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 405.0
@@ -137,17 +153,20 @@ margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ThemeTab" type="Control" parent="InteractionSpace"]
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3" instance=ExtResource( 5 )]
+tag = 1
+
+[node name="ThemeTab" type="VBoxContainer" parent="InteractionSpace"]
 visible = false
-margin_right = 669.0
-margin_bottom = 885.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 690.0
+margin_bottom = 1434.0
+alignment = 1
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Sprite" type="Sprite" parent="InteractionSpace/ThemeTab"]
-position = Vector2( 284.223, 221.997 )
-texture = ExtResource( 5 )
 
 [node name="Menu" type="Control" parent="."]
 visible = false
@@ -171,19 +190,25 @@ __meta__ = {
 }
 
 [node name="MainTabButton" type="Button" parent="Menu/MenuTab"]
-margin_left = 231.0
-margin_right = 458.0
+margin_right = 227.0
 margin_bottom = 227.0
 rect_min_size = Vector2( 227, 227 )
 text = "Main Tab"
 
+[node name="ColorTag" parent="Menu/MenuTab/MainTabButton" instance=ExtResource( 5 )]
+tag = 1
+
 [node name="ThemeButton" type="Button" parent="Menu/MenuTab"]
-margin_right = 227.0
+margin_left = 231.0
+margin_right = 458.0
 margin_bottom = 227.0
 rect_min_size = Vector2( 227, 227 )
 text = "Theme"
 
-[node name="NothingButton2" type="Button" parent="Menu/MenuTab"]
+[node name="ColorTag" parent="Menu/MenuTab/ThemeButton" instance=ExtResource( 5 )]
+tag = 1
+
+[node name="NothingButton" type="Button" parent="Menu/MenuTab"]
 margin_left = 462.0
 margin_right = 689.0
 margin_bottom = 227.0
@@ -191,102 +216,138 @@ rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
 
-[node name="NothingButton3" type="Button" parent="Menu/MenuTab"]
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton" instance=ExtResource( 5 )]
+tag = 2
+
+[node name="NothingButton2" type="Button" parent="Menu/MenuTab"]
 margin_top = 231.0
 margin_right = 227.0
 margin_bottom = 458.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton2" instance=ExtResource( 5 )]
+tag = 2
+
+[node name="NothingButton3" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
+margin_top = 231.0
+margin_right = 458.0
+margin_bottom = 458.0
+rect_min_size = Vector2( 227, 227 )
+disabled = true
+text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton3" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton4" type="Button" parent="Menu/MenuTab"]
-margin_left = 231.0
+margin_left = 462.0
 margin_top = 231.0
-margin_right = 458.0
+margin_right = 689.0
 margin_bottom = 458.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton4" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton5" type="Button" parent="Menu/MenuTab"]
-margin_left = 462.0
-margin_top = 231.0
-margin_right = 689.0
-margin_bottom = 458.0
+margin_top = 462.0
+margin_right = 227.0
+margin_bottom = 689.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton5" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton6" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
 margin_top = 462.0
-margin_right = 227.0
+margin_right = 458.0
 margin_bottom = 689.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton6" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton7" type="Button" parent="Menu/MenuTab"]
-margin_left = 231.0
+margin_left = 462.0
 margin_top = 462.0
-margin_right = 458.0
+margin_right = 689.0
 margin_bottom = 689.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton7" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton8" type="Button" parent="Menu/MenuTab"]
-margin_left = 462.0
-margin_top = 462.0
-margin_right = 689.0
-margin_bottom = 689.0
+margin_top = 693.0
+margin_right = 227.0
+margin_bottom = 920.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton8" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton9" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
 margin_top = 693.0
-margin_right = 227.0
+margin_right = 458.0
 margin_bottom = 920.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton9" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton10" type="Button" parent="Menu/MenuTab"]
-margin_left = 231.0
+margin_left = 462.0
 margin_top = 693.0
-margin_right = 458.0
+margin_right = 689.0
 margin_bottom = 920.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton10" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton11" type="Button" parent="Menu/MenuTab"]
-margin_left = 462.0
-margin_top = 693.0
-margin_right = 689.0
-margin_bottom = 920.0
+margin_top = 924.0
+margin_right = 227.0
+margin_bottom = 1151.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton11" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton12" type="Button" parent="Menu/MenuTab"]
+margin_left = 231.0
 margin_top = 924.0
-margin_right = 227.0
+margin_right = 458.0
 margin_bottom = 1151.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton12" instance=ExtResource( 5 )]
+tag = 2
 
 [node name="NothingButton13" type="Button" parent="Menu/MenuTab"]
-margin_left = 231.0
-margin_top = 924.0
-margin_right = 458.0
-margin_bottom = 1151.0
-rect_min_size = Vector2( 227, 227 )
-disabled = true
-text = "Nothing"
-
-[node name="NothingButton14" type="Button" parent="Menu/MenuTab"]
 margin_left = 462.0
 margin_top = 924.0
 margin_right = 689.0
@@ -295,7 +356,10 @@ rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
 
-[node name="NothingButton15" type="Button" parent="Menu/MenuTab"]
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton13" instance=ExtResource( 5 )]
+tag = 2
+
+[node name="NothingButton14" type="Button" parent="Menu/MenuTab"]
 margin_top = 1155.0
 margin_right = 227.0
 margin_bottom = 1382.0
@@ -303,7 +367,10 @@ rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
 
-[node name="NothingButton16" type="Button" parent="Menu/MenuTab"]
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton14" instance=ExtResource( 5 )]
+tag = 2
+
+[node name="NothingButton15" type="Button" parent="Menu/MenuTab"]
 margin_left = 231.0
 margin_top = 1155.0
 margin_right = 458.0
@@ -312,7 +379,10 @@ rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
 
-[node name="NothingButton17" type="Button" parent="Menu/MenuTab"]
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton15" instance=ExtResource( 5 )]
+tag = 2
+
+[node name="NothingButton16" type="Button" parent="Menu/MenuTab"]
 margin_left = 462.0
 margin_top = 1155.0
 margin_right = 689.0
@@ -320,7 +390,26 @@ margin_bottom = 1382.0
 rect_min_size = Vector2( 227, 227 )
 disabled = true
 text = "Nothing"
+
+[node name="ColorTag" parent="Menu/MenuTab/NothingButton16" instance=ExtResource( 5 )]
+tag = 2
 [connection signal="pressed" from="MenuButton" to="Menu" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/MainTabButton" to="Menu" method="_on_MainTabButton_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/ThemeButton" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton2" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton3" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton4" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton5" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton6" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton7" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton8" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton9" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton10" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton11" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton12" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton13" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton14" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton15" to="Menu" method="_on_ThemeButton_pressed"]
+[connection signal="pressed" from="Menu/MenuTab/NothingButton16" to="Menu" method="_on_ThemeButton_pressed"]

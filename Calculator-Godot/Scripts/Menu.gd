@@ -47,7 +47,9 @@ func _on_MainTabButton_pressed():
 	TabOpen = "MainTab"
 	ButtonPressed()
 
-
+#
+# called whent the theme tab button is pressed
+#
 func _on_ThemeButton_pressed():
 	TabOpen = "ThemeTab"
 	ButtonPressed()

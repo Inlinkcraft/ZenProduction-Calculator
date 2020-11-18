@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Texture/BaseSquare.jpg" type="Texture" id=1]
+
+[node name="Color" type="Control"]
+margin_right = 16.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 16, 75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorGraph" type="Sprite" parent="."]
+position = Vector2( 8, 37.5 )
+scale = Vector2( 0.45, 2 )
+texture = ExtResource( 1 )
