@@ -18,7 +18,7 @@ onready var allSlider = []
 # = FUNC = #
 
 # Calculate budget
-func _process(delta):
+func _process(_delta):
 	var sum = 0;
 	
 	for i in range(allSlider.size()):

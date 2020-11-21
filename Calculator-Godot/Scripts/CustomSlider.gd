@@ -27,7 +27,7 @@ var selected = false
 # Update every frame the value base on the handle position
 # @param delta : time elapse between frame
 #
-func _process(delta):
+func _process(_delta):
 	var rangeX = self.get_size().x
 	var rangeV = maxValue - minValue
 	value = (handle.position.x * rangeV)/rangeX
