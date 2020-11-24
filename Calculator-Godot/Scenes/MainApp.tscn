@@ -1,13 +1,14 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/InfoScreen.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/MainBudjetCircleBar.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
 [ext_resource path="res://Scenes/tags/ColorTag.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scripts/ThemeTab.gd" type="Script" id=6]
 [ext_resource path="res://Texture/BaseSquare.jpg" type="Texture" id=7]
 [ext_resource path="res://Texture/Test.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/CircleBar.tscn" type="PackedScene" id=9]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )
@@ -118,22 +119,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InfoScreen" type="RichTextLabel" parent="InteractionSpace/MainTab"]
-margin_right = 350.0
-margin_bottom = 200.0
-rect_scale = Vector2( 2, 2 )
-text = "
-Budget : 1000 $
-  
-"
-script = ExtResource( 3 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ColorTag" parent="InteractionSpace/MainTab/InfoScreen" instance=ExtResource( 5 )]
-tag = 6
-
 [node name="ScrollContainer" type="ScrollContainer" parent="InteractionSpace/MainTab"]
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -218,6 +203,11 @@ custom_styles/normal = SubResource( 10 )
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3" instance=ExtResource( 5 )]
 tag = 1
+
+[node name="CircleBar" parent="InteractionSpace/MainTab" instance=ExtResource( 9 )]
+position = Vector2( 353.134, 184.912 )
+scale = Vector2( 0.5, 0.5 )
+script = ExtResource( 3 )
 
 [node name="ThemeTab" type="VBoxContainer" parent="InteractionSpace"]
 visible = false
