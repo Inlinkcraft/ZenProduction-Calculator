@@ -16,7 +16,7 @@ onready var maxBar = $CustomSlider/MaxBar
 # = Func = #
 
 
-func _process(delta):
+func _process(_delta):
 	
 	# Set Values
 	maxBar.get_node("Value").set_text(str(stepify(slider.Get_Max_Value(), 0.01)) + "$")
