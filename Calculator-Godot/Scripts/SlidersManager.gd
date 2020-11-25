@@ -22,20 +22,16 @@ func _process(_delta):
 	var sum = 0;
 	
 	for i in range(allSlider.size()):
-		sum += allSlider[i].Get_Value()
+		sum += (allSlider[i].Get_Value() * data.totalBudget)/100
 	
 	data.budgetLeft = data.totalBudget - sum
-	
-	for i in range(allSlider.size()):
-		allSlider[i].Set_Max_Limiter(allSlider[i].Get_Value() + data.budgetLeft)
 
 # Called went the "Add" button is pressed
 func _on_Add_pressed():
 	var category = categoryPrefab.instance()
 	var slider = category.get_node("CustomSlider")
 	
-	slider.Set_Using_Limiter(true)
-	slider.Set_Max_Value(data.totalBudget)
+	slider.Set_Max_Value(100)
 	
 	themeManager.LoadCurThemeFor(category)
 	
