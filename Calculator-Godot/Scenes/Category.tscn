@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Scenes/CustomSlider.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Texture/LittleBar.jpg" type="Texture" id=2]
 [ext_resource path="res://Scenes/ColorManager.tscn" type="PackedScene" id=4]
 
 [node name="Category" type="Control"]
-margin_right = 700.0
-margin_bottom = 150.0
+margin_left = 1.18921
+margin_top = -3.56761
+margin_right = 701.189
+margin_bottom = 146.432
 rect_min_size = Vector2( 0, 150 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -34,3 +37,47 @@ margin_left = 30.0
 margin_top = 70.0
 margin_right = -30.0
 margin_bottom = -48.0
+
+[node name="Money" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 4.5
+margin_top = -47.0
+margin_right = 81.5
+margin_bottom = -8.0
+text = "1000$"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="Money" instance=ExtResource( 4 )]
+colorId = 6
+
+[node name="Pourcent" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -85.5
+margin_top = -47.0
+margin_right = -8.5
+margin_bottom = -8.0
+text = "% 100"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="Pourcent" instance=ExtResource( 4 )]
+colorId = 6
+
+[node name="LittleBar" type="Sprite" parent="."]
+position = Vector2( 349.966, 119.06 )
+texture = ExtResource( 2 )
+
+[node name="ColorTag" parent="LittleBar" instance=ExtResource( 4 )]
+colorId = 5

@@ -23,6 +23,8 @@ func _process(_delta):
 	
 	for i in range(allSlider.size()):
 		sum += (allSlider[i].Get_Value() * data.totalBudget)/100
+		allSlider[i].get_parent().get_node("Pourcent").text = "%" + str(stepify(allSlider[i].Get_Value(), 0.01))
+		allSlider[i].get_parent().get_node("Money").text = str(stepify((allSlider[i].Get_Value() * data.totalBudget)/100, 0.01)) + "$"
 	
 	data.budgetLeft = data.totalBudget - sum
 
