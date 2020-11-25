@@ -1,14 +1,15 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/MainBudjetCircleBar.gd" type="Script" id=3]
 [ext_resource path="res://Scripts/Menu.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/tags/ColorTag.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scripts/ThemeTab.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/ColorManager.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/ThemeManager.gd" type="Script" id=6]
 [ext_resource path="res://Texture/BaseSquare.jpg" type="Texture" id=7]
 [ext_resource path="res://Texture/Test.png" type="Texture" id=8]
 [ext_resource path="res://Scenes/CircleBar.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scripts/FileManager.gd" type="Script" id=10]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )
@@ -81,6 +82,14 @@ region_rect = Rect2( 0, 0, 32, 32 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="Managers" type="Node" parent="."]
+
+[node name="FileMananager" type="Node" parent="Managers"]
+script = ExtResource( 10 )
+
+[node name="ThemeManager" type="Node" parent="Managers"]
+script = ExtResource( 6 )
+
 [node name="TopBar" type="Sprite" parent="."]
 position = Vector2( 360, 48 )
 texture = ExtResource( 7 )
@@ -88,7 +97,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 720, 96 )
 
 [node name="ColorTag" parent="TopBar" instance=ExtResource( 5 )]
-tag = 2
+colorId = 1
 
 [node name="MenuButton" type="Button" parent="."]
 margin_left = 10.0
@@ -101,7 +110,7 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="MenuButton" instance=ExtResource( 5 )]
-tag = 1
+colorId = 3
 
 [node name="InteractionSpace" type="Control" parent="."]
 margin_left = 10.0
@@ -151,7 +160,7 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" instance=ExtResource( 5 )]
-tag = 1
+colorId = 4
 
 [node name="Tabs" type="Control" parent="InteractionSpace/MainTab"]
 margin_left = 96.0
@@ -180,7 +189,7 @@ size_flags_vertical = 3
 custom_styles/normal = SubResource( 8 )
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button" instance=ExtResource( 5 )]
-tag = 1
+colorId = 1
 
 [node name="Button2" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 202.0
@@ -191,7 +200,7 @@ size_flags_vertical = 3
 custom_styles/normal = SubResource( 9 )
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2" instance=ExtResource( 5 )]
-tag = 1
+colorId = 1
 
 [node name="Button3" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 405.0
@@ -202,7 +211,7 @@ size_flags_vertical = 3
 custom_styles/normal = SubResource( 10 )
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3" instance=ExtResource( 5 )]
-tag = 1
+colorId = 1
 
 [node name="CircleBar" parent="InteractionSpace/MainTab" instance=ExtResource( 9 )]
 position = Vector2( 353.134, 184.912 )
@@ -216,7 +225,6 @@ margin_top = 10.0
 margin_right = 690.0
 margin_bottom = 1434.0
 alignment = 1
-script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -259,7 +267,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 620, 500 )
 
 [node name="ColorTag" parent="Menu/MenuTab/BackgroundTop" instance=ExtResource( 5 )]
-tag = 2
+colorId = 1
 
 [node name="BackgroundBottom" type="Sprite" parent="Menu/MenuTab"]
 position = Vector2( 310, 1030 )
@@ -268,7 +276,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 620, 1060 )
 
 [node name="ColorTag" parent="Menu/MenuTab/BackgroundBottom" instance=ExtResource( 5 )]
-tag = 5
+colorId = 2
 
 [node name="MenuTab" type="VBoxContainer" parent="Menu/MenuTab"]
 margin_top = 520.0
@@ -288,9 +296,6 @@ custom_styles/focus = SubResource( 18 )
 custom_styles/disabled = SubResource( 19 )
 custom_styles/normal = SubResource( 20 )
 
-[node name="ColorTag" parent="Menu/MenuTab/MenuTab/MainTabButton" instance=ExtResource( 5 )]
-tag = 1
-
 [node name="Label" type="Label" parent="Menu/MenuTab/MenuTab/MainTabButton"]
 modulate = Color( 0, 0, 0, 1 )
 margin_right = 155.0
@@ -304,7 +309,7 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="Menu/MenuTab/MenuTab/MainTabButton/Label" instance=ExtResource( 5 )]
-tag = 6
+colorId = 6
 
 [node name="ThemeButton" type="Button" parent="Menu/MenuTab/MenuTab"]
 margin_top = 104.0
@@ -316,9 +321,6 @@ custom_styles/pressed = SubResource( 22 )
 custom_styles/focus = SubResource( 23 )
 custom_styles/disabled = SubResource( 24 )
 custom_styles/normal = SubResource( 25 )
-
-[node name="ColorTag" parent="Menu/MenuTab/MenuTab/ThemeButton" instance=ExtResource( 5 )]
-tag = 1
 
 [node name="Label" type="Label" parent="Menu/MenuTab/MenuTab/ThemeButton"]
 modulate = Color( 0, 0, 0, 1 )
@@ -333,7 +335,7 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="Menu/MenuTab/MenuTab/ThemeButton/Label" instance=ExtResource( 5 )]
-tag = 6
+colorId = 6
 [connection signal="pressed" from="MenuButton" to="Menu" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
 [connection signal="pressed" from="Menu/BackButton" to="Menu" method="_on_BackButton_pressed"]

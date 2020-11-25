@@ -9,7 +9,7 @@ extends VBoxContainer
 
 var categoryPrefab = preload("res://Scenes/Category.tscn")
 
-onready var themeManager = $"/root/Node2D/InteractionSpace/ThemeTab"
+onready var themeManager = $"/root/Node2D/Managers/ThemeManager"
 onready var data = $"/root/Node2D"
 
 onready var addButton = $Add

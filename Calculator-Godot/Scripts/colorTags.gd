@@ -4,19 +4,22 @@
 
 extends Node
 
-#
-# Just a script to tell witch color of the theme to put
-#
-
 # = VAR = #
-enum Tags {
-	Nothing,
+enum Colors {
+	Background,
+	
 	Main,
 	Secondary,
-	BarMain,
-	BarSecondary,
-	Background,
-	Text
+	
+	InfoAlert,
+	Action,
+	Inactive,
+	
+	Text,
+	TextHighlight,
+	TextLittle,
+	
+	Gradien
 }
 
-export(Tags) var tag = Tags.Nothing
+export(Colors) var colorId = Colors.Background

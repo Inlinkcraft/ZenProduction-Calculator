@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/ThemeButton.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/tags/ColorTag.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/ColorManager.tscn" type="PackedScene" id=2]
 
 [node name="ThemeButton" type="Button"]
 margin_right = 680.0
@@ -36,5 +36,5 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="." instance=ExtResource( 2 )]
-tag = 1
+colorId = 1
 [connection signal="pressed" from="." to="." method="_on_ThemeButton_pressed"]
