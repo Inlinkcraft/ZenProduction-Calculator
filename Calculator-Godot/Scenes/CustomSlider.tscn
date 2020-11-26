@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/CustomSlider.gd" type="Script" id=1]
-[ext_resource path="res://Texture/BaseSquare.jpg" type="Texture" id=2]
+[ext_resource path="res://Texture/bar.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/ColorManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Texture/Cricle.png" type="Texture" id=4]
 
@@ -19,7 +19,6 @@ __meta__ = {
 modulate = Color( 1, 0, 0, 1 )
 position = Vector2( 320, 16 )
 texture = ExtResource( 2 )
-region_enabled = true
 region_rect = Rect2( 0, 0, 640, 10 )
 
 [node name="ColorTag" parent="Background" instance=ExtResource( 3 )]
@@ -30,7 +29,6 @@ modulate = Color( 0.545098, 1, 0, 1 )
 position = Vector2( 320, 16 )
 z_index = 1
 texture = ExtResource( 2 )
-region_enabled = true
 region_rect = Rect2( 0, 0, 640, 10 )
 
 [node name="ColorTag" parent="Top" instance=ExtResource( 3 )]
