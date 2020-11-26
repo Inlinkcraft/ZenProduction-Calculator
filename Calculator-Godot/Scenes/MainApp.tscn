@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
@@ -11,6 +11,10 @@
 [ext_resource path="res://Scenes/CircleBar.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scripts/FileManager.gd" type="Script" id=10]
 [ext_resource path="res://Fonts/MenuFont.tres" type="DynamicFont" id=11]
+[ext_resource path="res://Fonts/Roboto-Black.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://Scripts/Tabs.gd" type="Script" id=13]
+[ext_resource path="res://Texture/CapsuleSelection.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/TabButton.gd" type="Script" id=15]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )
@@ -38,9 +42,52 @@ VScrollBar/styles/grabber_pressed = SubResource( 4 )
 VScrollBar/styles/scroll = SubResource( 5 )
 VScrollBar/styles/scroll_focus = SubResource( 6 )
 
+[sub_resource type="StyleBoxEmpty" id=39]
+
+[sub_resource type="StyleBoxEmpty" id=40]
+
+[sub_resource type="StyleBoxEmpty" id=41]
+
+[sub_resource type="StyleBoxEmpty" id=42]
+
+[sub_resource type="StyleBoxEmpty" id=43]
+
+[sub_resource type="DynamicFont" id=44]
+size = 64
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=28]
+
+[sub_resource type="StyleBoxEmpty" id=29]
+
+[sub_resource type="StyleBoxEmpty" id=30]
+
 [sub_resource type="StyleBoxEmpty" id=8]
 
+[sub_resource type="DynamicFont" id=26]
+size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxEmpty" id=38]
+
+[sub_resource type="StyleBoxEmpty" id=31]
+
+[sub_resource type="StyleBoxEmpty" id=32]
+
+[sub_resource type="StyleBoxEmpty" id=33]
+
 [sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=34]
+
+[sub_resource type="StyleBoxEmpty" id=35]
+
+[sub_resource type="StyleBoxEmpty" id=36]
+
+[sub_resource type="StyleBoxEmpty" id=37]
 
 [sub_resource type="StyleBoxEmpty" id=10]
 
@@ -93,6 +140,7 @@ script = ExtResource( 6 )
 
 [node name="TopBar" type="Sprite" parent="."]
 position = Vector2( 360, 48 )
+z_index = -2
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 720, 96 )
@@ -101,6 +149,7 @@ region_rect = Rect2( 0, 0, 720, 96 )
 colorId = 1
 
 [node name="MenuButton" type="Button" parent="."]
+modulate = Color( 0, 0, 0, 1 )
 margin_left = 10.0
 margin_right = 106.0
 margin_bottom = 96.0
@@ -159,13 +208,37 @@ __meta__ = {
 margin_right = 700.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 700, 75 )
-text = "+"
+custom_styles/hover = SubResource( 39 )
+custom_styles/pressed = SubResource( 40 )
+custom_styles/focus = SubResource( 41 )
+custom_styles/disabled = SubResource( 42 )
+custom_styles/normal = SubResource( 43 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" instance=ExtResource( 5 )]
+[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add"]
+modulate = Color( 0.00392157, 0.509804, 1, 1 )
+position = Vector2( 350.245, 37.9384 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add/CapsuleSelection" instance=ExtResource( 5 )]
 colorId = 4
+
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 44 )
+text = "+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/ScrollContainer/Sliders/Add/Label" instance=ExtResource( 5 )]
+colorId = 7
 
 [node name="Tabs" type="Control" parent="InteractionSpace/MainTab"]
 margin_left = 96.0
@@ -182,6 +255,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+script = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -191,10 +265,38 @@ margin_right = 198.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 27 )
+custom_styles/pressed = SubResource( 28 )
+custom_styles/focus = SubResource( 29 )
+custom_styles/disabled = SubResource( 30 )
 custom_styles/normal = SubResource( 8 )
+script = ExtResource( 15 )
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button" instance=ExtResource( 5 )]
-colorId = 1
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 26 )
+text = "Income"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button/Name" instance=ExtResource( 5 )]
+colorId = 6
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button"]
+visible = false
+modulate = Color( 0.0705882, 0.34902, 0.937255, 1 )
+position = Vector2( 98.9075, 47.7981 )
+scale = Vector2( 0.21, 0.21 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button/Background" instance=ExtResource( 5 )]
+colorId = 4
 
 [node name="Button2" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 202.0
@@ -202,10 +304,36 @@ margin_right = 401.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 38 )
+custom_styles/pressed = SubResource( 31 )
+custom_styles/focus = SubResource( 32 )
+custom_styles/disabled = SubResource( 33 )
 custom_styles/normal = SubResource( 9 )
+script = ExtResource( 15 )
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2" instance=ExtResource( 5 )]
-colorId = 1
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 26 )
+text = "Budget"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2/Name" instance=ExtResource( 5 )]
+colorId = 7
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2"]
+modulate = Color( 0.0705882, 0.34902, 0.937255, 1 )
+position = Vector2( 99.9074, 47.7981 )
+scale = Vector2( 0.21, 0.21 )
+z_index = -1
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button2/Background" instance=ExtResource( 5 )]
+colorId = 4
 
 [node name="Button3" type="Button" parent="InteractionSpace/MainTab/Tabs/Tabs1"]
 margin_left = 405.0
@@ -213,10 +341,39 @@ margin_right = 604.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+custom_styles/hover = SubResource( 34 )
+custom_styles/pressed = SubResource( 35 )
+custom_styles/focus = SubResource( 36 )
+custom_styles/disabled = SubResource( 37 )
 custom_styles/normal = SubResource( 10 )
+script = ExtResource( 15 )
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3" instance=ExtResource( 5 )]
-colorId = 1
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 26 )
+text = "Extra"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3/Name" instance=ExtResource( 5 )]
+colorId = 6
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3"]
+visible = false
+modulate = Color( 0.0705882, 0.34902, 0.937255, 1 )
+position = Vector2( 99.9075, 47.7981 )
+scale = Vector2( 0.21, 0.21 )
+z_index = -1
+texture = ExtResource( 14 )
+region_rect = Rect2( 0, 0, 700, 60 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/Button3/Background" instance=ExtResource( 5 )]
+colorId = 4
 
 [node name="CircleBar" parent="InteractionSpace/MainTab" instance=ExtResource( 9 )]
 position = Vector2( 353.134, 184.912 )
@@ -355,6 +512,9 @@ __meta__ = {
 colorId = 6
 [connection signal="pressed" from="MenuButton" to="Menu" method="_on_MenuButton_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/Button" to="InteractionSpace/MainTab/Tabs/Tabs1/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/Button2" to="InteractionSpace/MainTab/Tabs/Tabs1/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/Button3" to="InteractionSpace/MainTab/Tabs/Tabs1/Button3" method="_on_Button_pressed"]
 [connection signal="pressed" from="Menu/BackButton" to="Menu" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/MenuTab/MainTabButton" to="Menu" method="_on_MainTabButton_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/MenuTab/ThemeButton" to="Menu" method="_on_ThemeButton_pressed"]
