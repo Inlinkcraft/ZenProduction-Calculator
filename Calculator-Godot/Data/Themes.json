@@ -16,7 +16,7 @@
 
       "Text" : [0,0,0,1],
       "TextHighlight" : [1,1,1,1],
-      "TextLittle" : [0.8,0.8,0.8,1]
+      "TextLittle" : [0.5,0.5,0.5,1]
 
     }
 
@@ -38,7 +38,7 @@
 
       "Text" : [0,0,0,1],
       "TextHighlight" : [1,1,1,1],
-      "TextLittle" : [0.8,0.8,0.8,1]
+      "TextLittle" : [0.5,0.5,0.5,1]
 
     }
 
@@ -60,7 +60,7 @@
 
       "Text" : [1,1,1,1],
       "TextHighlight" : [0.27,0.27,0.27,1],
-      "TextLittle" : [0.8,0.8,0.8,1]
+      "TextLittle" : [0.5,0.5,0.5,1]
 
     }
 
