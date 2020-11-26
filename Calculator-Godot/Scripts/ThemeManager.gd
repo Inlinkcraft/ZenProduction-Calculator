@@ -106,6 +106,15 @@ func SetTheme(id):
 	
 	# Set background
 	VisualServer.set_default_clear_color(backgroundColor)
+	
+	# Set Pastille
+	for theme in themeTab.get_children():
+		if(theme.name == allThemeData[id]["ThemeName"]):
+			theme.get_node("Circle/ColorTag").colorId = 4
+		else:
+			theme.get_node("Circle/ColorTag").colorId = 5
+		
+	
 	LoadCurThemeFor(get_tree().root.get_node("Node2D"))
 
 #
