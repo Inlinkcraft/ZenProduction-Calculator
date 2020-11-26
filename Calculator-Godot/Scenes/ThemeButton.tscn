@@ -1,13 +1,34 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/ThemeButton.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/ColorManager.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Roboto-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Texture/Cricle.png" type="Texture" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 3 )
 
 [node name="ThemeButton" type="Button"]
 margin_right = 680.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 680, 75 )
 size_flags_horizontal = 3
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -18,12 +39,16 @@ margin_right = 340.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 340, 75 )
 size_flags_vertical = 3
+custom_fonts/font = SubResource( 6 )
 text = "Theme Name"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ColorTag" parent="Name" instance=ExtResource( 2 )]
+colorId = 6
 
 [node name="Colors" type="HBoxContainer" parent="."]
 margin_left = 340.0
@@ -35,6 +60,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorTag" parent="." instance=ExtResource( 2 )]
-colorId = 1
+[node name="Circle" type="Sprite" parent="."]
+position = Vector2( 37.5, 37.5 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="ColorTag" parent="Circle" instance=ExtResource( 2 )]
+colorId = 5
 [connection signal="pressed" from="." to="." method="_on_ThemeButton_pressed"]
