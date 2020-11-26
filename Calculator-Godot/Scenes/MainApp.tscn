@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=63 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
@@ -94,6 +94,10 @@ font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=45]
 size = 32
+font_data = ExtResource( 12 )
+
+[sub_resource type="DynamicFont" id=46]
+size = 96
 font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxTexture" id=30]
@@ -325,6 +329,7 @@ texture = ExtResource( 14 )
 colorId = 4
 
 [node name="BudgetTab" type="Control" parent="InteractionSpace/MainTab"]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -424,7 +429,6 @@ texture = ExtResource( 16 )
 colorId = 5
 
 [node name="IncomeTab" type="Control" parent="InteractionSpace/MainTab"]
-visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -445,8 +449,6 @@ __meta__ = {
 }
 
 [node name="Incomes" type="VBoxContainer" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer"]
-margin_right = 700.0
-margin_bottom = 75.0
 grow_horizontal = 2
 grow_vertical = 2
 custom_constants/separation = 5
@@ -454,10 +456,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Add" type="Button" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes"]
+[node name="Add" type="Button" parent="InteractionSpace/MainTab/IncomeTab"]
+margin_top = 288.0
 margin_right = 700.0
-margin_bottom = 75.0
-rect_min_size = Vector2( 700, 75 )
+margin_bottom = 363.0
 custom_styles/hover = SubResource( 8 )
 custom_styles/pressed = SubResource( 9 )
 custom_styles/focus = SubResource( 10 )
@@ -467,16 +469,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes/Add"]
+[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/Add"]
 modulate = Color( 0.00392157, 0.509804, 1, 1 )
 position = Vector2( 350.245, 37.9384 )
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 14 )
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes/Add/CapsuleSelection" instance=ExtResource( 5 )]
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/Add/CapsuleSelection" instance=ExtResource( 5 )]
 colorId = 4
 
-[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes/Add"]
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/Add"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 13 )
@@ -487,8 +489,25 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes/Add/Label" instance=ExtResource( 5 )]
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/Add/Label" instance=ExtResource( 5 )]
 colorId = 7
+
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab"]
+margin_left = -4.0
+margin_top = 87.0
+margin_right = 696.0
+margin_bottom = 201.0
+rect_min_size = Vector2( 700, 0 )
+custom_fonts/font = SubResource( 46 )
+text = "1000$"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/Label" instance=ExtResource( 5 )]
+colorId = 3
 
 [node name="ExpenseTab" type="Control" parent="InteractionSpace/MainTab"]
 visible = false
@@ -692,7 +711,7 @@ colorId = 6
 [connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/ExpenseTab" to="InteractionSpace/MainTab/Tabs/Tabs1/ExpenseTab" method="_on_Button_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab" to="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab" method="_on_Button_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/BudgetTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/BudgetTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
-[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes/Add" to="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes" method="_on_Add_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/Add" to="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes" method="_on_Add_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ExpenseTab/ScrollContainer/Expense/Add" to="InteractionSpace/MainTab/ExpenseTab/ScrollContainer/Expense" method="_on_Add_pressed"]
 [connection signal="pressed" from="Menu/BackButton" to="Menu" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/MenuTab/MainTabButton" to="Menu" method="_on_MainTabButton_pressed"]
