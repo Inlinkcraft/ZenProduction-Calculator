@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=2]
+[gd_scene load_steps=76 format=2]
 
 [ext_resource path="res://Scripts/SlidersManager.gd" type="Script" id=1]
 [ext_resource path="res://Scripts/BaseInfo.gd" type="Script" id=2]
@@ -16,45 +16,12 @@
 [ext_resource path="res://Texture/CapsuleSelection.png" type="Texture" id=14]
 [ext_resource path="res://Scripts/TabButton.gd" type="Script" id=15]
 [ext_resource path="res://Texture/LittleBar.jpg" type="Texture" id=16]
+[ext_resource path="res://Scripts/IncomeTab.gd" type="Script" id=18]
 
 [sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 8 )
 region_rect = Rect2( 0, -0.671, 640, 640 )
 margin_bottom = 22.7687
-
-[sub_resource type="StyleBoxEmpty" id=14]
-
-[sub_resource type="StyleBoxEmpty" id=15]
-
-[sub_resource type="StyleBoxEmpty" id=16]
-
-[sub_resource type="StyleBoxEmpty" id=17]
-
-[sub_resource type="StyleBoxEmpty" id=18]
-
-[sub_resource type="DynamicFont" id=19]
-size = 32
-font_data = ExtResource( 12 )
-
-[sub_resource type="StyleBoxEmpty" id=25]
-
-[sub_resource type="StyleBoxEmpty" id=26]
-
-[sub_resource type="StyleBoxEmpty" id=27]
-
-[sub_resource type="StyleBoxEmpty" id=28]
-
-[sub_resource type="StyleBoxEmpty" id=29]
-
-[sub_resource type="StyleBoxEmpty" id=20]
-
-[sub_resource type="StyleBoxEmpty" id=21]
-
-[sub_resource type="StyleBoxEmpty" id=22]
-
-[sub_resource type="StyleBoxEmpty" id=23]
-
-[sub_resource type="StyleBoxEmpty" id=24]
 
 [sub_resource type="StyleBoxEmpty" id=2]
 
@@ -66,16 +33,9 @@ font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxEmpty" id=6]
 
-[sub_resource type="Theme" id=7]
-VScrollBar/icons/decrement = null
-VScrollBar/icons/decrement_highlight = null
-VScrollBar/icons/increment = null
-VScrollBar/icons/increment_highlight = null
-VScrollBar/styles/grabber = SubResource( 2 )
-VScrollBar/styles/grabber_highlight = SubResource( 3 )
-VScrollBar/styles/grabber_pressed = SubResource( 4 )
-VScrollBar/styles/scroll = SubResource( 5 )
-VScrollBar/styles/scroll_focus = SubResource( 6 )
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxEmpty" id=8]
 
@@ -87,34 +47,67 @@ VScrollBar/styles/scroll_focus = SubResource( 6 )
 
 [sub_resource type="StyleBoxEmpty" id=12]
 
-[sub_resource type="DynamicFont" id=13]
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxEmpty" id=19]
+
+[sub_resource type="StyleBoxEmpty" id=20]
+
+[sub_resource type="StyleBoxEmpty" id=21]
+
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="Theme" id=23]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource( 18 )
+VScrollBar/styles/grabber_highlight = SubResource( 19 )
+VScrollBar/styles/grabber_pressed = SubResource( 20 )
+VScrollBar/styles/scroll = SubResource( 21 )
+VScrollBar/styles/scroll_focus = SubResource( 22 )
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="StyleBoxEmpty" id=25]
+
+[sub_resource type="StyleBoxEmpty" id=26]
+
+[sub_resource type="StyleBoxEmpty" id=27]
+
+[sub_resource type="StyleBoxEmpty" id=28]
+
+[sub_resource type="DynamicFont" id=29]
 size = 64
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=45]
+[sub_resource type="DynamicFont" id=30]
 size = 32
 font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=46]
+[sub_resource type="DynamicFont" id=31]
 size = 96
 font_data = ExtResource( 12 )
 
-[sub_resource type="StyleBoxTexture" id=30]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="StyleBoxTexture" id=31]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 32, 32 )
-
-[sub_resource type="StyleBoxEmpty" id=32]
+[sub_resource type="DynamicFont" id=32]
+size = 42
+font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxEmpty" id=33]
 
-[sub_resource type="StyleBoxTexture" id=34]
-texture = ExtResource( 7 )
-region_rect = Rect2( 0, 0, 32, 32 )
+[sub_resource type="StyleBoxEmpty" id=34]
 
 [sub_resource type="StyleBoxEmpty" id=35]
 
@@ -122,11 +115,18 @@ region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StyleBoxEmpty" id=37]
 
-[sub_resource type="StyleBoxEmpty" id=38]
+[sub_resource type="DynamicFont" id=38]
+size = 30
+font_data = ExtResource( 12 )
 
-[sub_resource type="StyleBoxEmpty" id=39]
+[sub_resource type="DynamicFont" id=39]
+size = 25
+font_data = ExtResource( 12 )
 
-[sub_resource type="StyleBoxEmpty" id=40]
+[sub_resource type="DynamicFont" id=40]
+size = 41
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="StyleBoxEmpty" id=41]
 
@@ -134,10 +134,43 @@ region_rect = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="StyleBoxEmpty" id=43]
 
-[sub_resource type="StyleBoxEmpty" id=44]
+[sub_resource type="StyleBoxTexture" id=44]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxTexture" id=45]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=46]
+
+[sub_resource type="StyleBoxEmpty" id=47]
+
+[sub_resource type="StyleBoxTexture" id=48]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 32, 32 )
+
+[sub_resource type="StyleBoxEmpty" id=49]
+
+[sub_resource type="StyleBoxEmpty" id=50]
+
+[sub_resource type="StyleBoxEmpty" id=51]
+
+[sub_resource type="StyleBoxEmpty" id=52]
+
+[sub_resource type="StyleBoxEmpty" id=53]
+
+[sub_resource type="StyleBoxEmpty" id=54]
+
+[sub_resource type="StyleBoxEmpty" id=55]
+
+[sub_resource type="StyleBoxEmpty" id=56]
+
+[sub_resource type="StyleBoxEmpty" id=57]
+
+[sub_resource type="StyleBoxEmpty" id=58]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 2 )
 
 [node name="Managers" type="Node" parent="."]
 
@@ -146,6 +179,9 @@ script = ExtResource( 10 )
 
 [node name="ThemeManager" type="Node" parent="Managers"]
 script = ExtResource( 6 )
+
+[node name="MoneyManager" type="Node" parent="Managers"]
+script = ExtResource( 2 )
 
 [node name="TopBar" type="Sprite" parent="."]
 position = Vector2( 360, 48 )
@@ -218,18 +254,17 @@ margin_right = 198.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 14 )
-custom_styles/pressed = SubResource( 15 )
-custom_styles/focus = SubResource( 16 )
-custom_styles/disabled = SubResource( 17 )
-custom_styles/normal = SubResource( 18 )
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 script = ExtResource( 15 )
 
 [node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/IncomeTab"]
-modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 7 )
 text = "Income"
 align = 1
 valign = 1
@@ -238,10 +273,9 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/IncomeTab/Name" instance=ExtResource( 5 )]
-colorId = 6
+colorId = 7
 
 [node name="Background" type="Sprite" parent="InteractionSpace/MainTab/Tabs/Tabs1/IncomeTab"]
-visible = false
 modulate = Color( 0.0705882, 0.34902, 0.937255, 1 )
 position = Vector2( 98.9075, 47.7981 )
 scale = Vector2( 0.21, 0.21 )
@@ -257,18 +291,18 @@ margin_right = 401.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 25 )
-custom_styles/pressed = SubResource( 26 )
-custom_styles/focus = SubResource( 27 )
-custom_styles/disabled = SubResource( 28 )
-custom_styles/normal = SubResource( 29 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
 script = ExtResource( 15 )
 
 [node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/ExpenseTab"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 7 )
 text = "Expense"
 align = 1
 valign = 1
@@ -297,17 +331,18 @@ margin_right = 604.0
 margin_bottom = 96.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_styles/hover = SubResource( 20 )
-custom_styles/pressed = SubResource( 21 )
-custom_styles/focus = SubResource( 22 )
-custom_styles/disabled = SubResource( 23 )
-custom_styles/normal = SubResource( 24 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
 script = ExtResource( 15 )
 
 [node name="Name" type="Label" parent="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab"]
+modulate = Color( 0, 0, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 19 )
+custom_fonts/font = SubResource( 7 )
 text = "Budget"
 align = 1
 valign = 1
@@ -316,9 +351,10 @@ __meta__ = {
 }
 
 [node name="ColorTag" parent="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab/Name" instance=ExtResource( 5 )]
-colorId = 7
+colorId = 6
 
 [node name="Background" type="Sprite" parent="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab"]
+visible = false
 modulate = Color( 0.0705882, 0.34902, 0.937255, 1 )
 position = Vector2( 99.9074, 47.7981 )
 scale = Vector2( 0.21, 0.21 )
@@ -343,7 +379,7 @@ margin_top = 400.0
 margin_right = 660.0
 margin_bottom = 1360.0
 rect_min_size = Vector2( 700, 1000 )
-theme = SubResource( 7 )
+theme = SubResource( 23 )
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -364,11 +400,11 @@ __meta__ = {
 margin_right = 700.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 700, 75 )
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -385,7 +421,7 @@ colorId = 4
 [node name="Label" type="Label" parent="InteractionSpace/MainTab/BudgetTab/ScrollContainer/Sliders/Add"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 29 )
 text = "+"
 align = 1
 valign = 1
@@ -410,7 +446,7 @@ margin_left = -40.5
 margin_top = 93.0
 margin_right = 40.5
 margin_bottom = 131.0
-custom_fonts/font = SubResource( 45 )
+custom_fonts/font = SubResource( 30 )
 text = "100%"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -431,6 +467,7 @@ colorId = 5
 [node name="IncomeTab" type="Control" parent="InteractionSpace/MainTab"]
 margin_right = 40.0
 margin_bottom = 40.0
+script = ExtResource( 18 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -442,7 +479,7 @@ margin_top = 400.0
 margin_right = 660.0
 margin_bottom = 1360.0
 rect_min_size = Vector2( 700, 1000 )
-theme = SubResource( 7 )
+theme = SubResource( 23 )
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -460,11 +497,11 @@ __meta__ = {
 margin_top = 288.0
 margin_right = 700.0
 margin_bottom = 363.0
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -481,7 +518,7 @@ colorId = 4
 [node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/Add"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 29 )
 text = "+"
 align = 1
 valign = 1
@@ -492,13 +529,13 @@ __meta__ = {
 [node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/Add/Label" instance=ExtResource( 5 )]
 colorId = 7
 
-[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab"]
+[node name="TotalIncome" type="Label" parent="InteractionSpace/MainTab/IncomeTab"]
 margin_left = -4.0
 margin_top = 87.0
 margin_right = 696.0
 margin_bottom = 201.0
 rect_min_size = Vector2( 700, 0 )
-custom_fonts/font = SubResource( 46 )
+custom_fonts/font = SubResource( 31 )
 text = "1000$"
 align = 1
 valign = 1
@@ -506,7 +543,502 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/Label" instance=ExtResource( 5 )]
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/TotalIncome" instance=ExtResource( 5 )]
+colorId = 3
+
+[node name="AddTab" type="Control" parent="InteractionSpace/MainTab/IncomeTab"]
+visible = false
+margin_left = -11.0
+margin_top = -106.0
+margin_right = 709.0
+margin_bottom = 1454.0
+rect_min_size = Vector2( 720, 1560 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BaseSquare" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab"]
+modulate = Color( 0.14902, 0.14902, 0.14902, 0.388235 )
+position = Vector2( 360, 779.293 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 720, 1560 )
+
+[node name="ChoseAdd" type="Control" parent="InteractionSpace/MainTab/IncomeTab/AddTab"]
+margin_right = 720.0
+margin_bottom = 1560.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd"]
+position = Vector2( 360, 780.178 )
+scale = Vector2( 1, 1.16205 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 620, 480 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/Background" instance=ExtResource( 5 )]
+colorId = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -300.0
+margin_top = -268.0
+margin_right = 300.0
+margin_bottom = 269.0
+rect_min_size = Vector2( 600, 458 )
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChoseAdd" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer"]
+modulate = Color( 0, 0, 0, 1 )
+margin_right = 600.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 580, 75 )
+custom_fonts/font = SubResource( 32 )
+text = "Chose the type Of Income"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/ChoseAdd" instance=ExtResource( 5 )]
+colorId = 3
+
+[node name="OneTimeAmount" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer"]
+margin_top = 79.0
+margin_right = 600.0
+margin_bottom = 229.0
+rect_min_size = Vector2( 600, 150 )
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/disabled = SubResource( 36 )
+custom_styles/normal = SubResource( 37 )
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount"]
+modulate = Color( 0.905882, 0.905882, 0.905882, 1 )
+position = Vector2( 300, 75 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 150 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount/Background" instance=ExtResource( 5 )]
+colorId = 5
+
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -75.5
+margin_top = 16.0
+margin_right = 75.5
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 38 )
+text = "Add Amont"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount/Name" instance=ExtResource( 5 )]
+colorId = 6
+
+[node name="Info" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 80.0
+margin_right = 259.5
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 39 )
+text = "Add a one time amound to your income"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount/Info" instance=ExtResource( 5 )]
+colorId = 8
+
+[node name="LittleBar" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount"]
+position = Vector2( 299, 64.9999 )
+rotation = 1.5708
+scale = Vector2( 2, 4 )
+texture = ExtResource( 16 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount/LittleBar" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="RecursiveAmount" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer"]
+margin_top = 233.0
+margin_right = 600.0
+margin_bottom = 383.0
+rect_min_size = Vector2( 600, 150 )
+rect_pivot_offset = Vector2( 551, 37.3135 )
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/disabled = SubResource( 36 )
+custom_styles/normal = SubResource( 37 )
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount"]
+modulate = Color( 0.905882, 0.905882, 0.905882, 1 )
+position = Vector2( 300, 75 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 150 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount/Background" instance=ExtResource( 5 )]
+colorId = 5
+
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -116.0
+margin_top = 16.0
+margin_right = 116.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 38 )
+text = "Recursive Amont"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount/Name" instance=ExtResource( 5 )]
+colorId = 6
+
+[node name="Info" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 80.0
+margin_right = 259.5
+margin_bottom = 116.0
+custom_fonts/font = SubResource( 39 )
+text = "Add a specified amount every x time"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount/Info" instance=ExtResource( 5 )]
+colorId = 8
+
+[node name="LittleBar" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount"]
+position = Vector2( 299, 65.9999 )
+rotation = 1.5708
+scale = Vector2( 2, 4 )
+texture = ExtResource( 16 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/RecursiveAmount/LittleBar" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="AdvanceAmount" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer"]
+margin_top = 387.0
+margin_right = 600.0
+margin_bottom = 537.0
+rect_min_size = Vector2( 600, 150 )
+custom_styles/hover = SubResource( 33 )
+custom_styles/pressed = SubResource( 34 )
+custom_styles/focus = SubResource( 35 )
+custom_styles/disabled = SubResource( 36 )
+custom_styles/normal = SubResource( 37 )
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount"]
+modulate = Color( 0.905882, 0.905882, 0.905882, 1 )
+position = Vector2( 300, 75 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 600, 150 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount/Background" instance=ExtResource( 5 )]
+colorId = 5
+
+[node name="Name" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -59.0
+margin_top = 16.0
+margin_right = 59.0
+margin_bottom = 52.0
+custom_fonts/font = SubResource( 38 )
+text = "Advance"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount/Name" instance=ExtResource( 5 )]
+colorId = 6
+
+[node name="Info" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -267.5
+margin_top = 72.0
+margin_right = 259.5
+margin_bottom = 137.0
+custom_fonts/font = SubResource( 39 )
+text = "This give you more freedom but its more complicated"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount/Info" instance=ExtResource( 5 )]
+colorId = 8
+
+[node name="LittleBar" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount"]
+position = Vector2( 299, 62.9999 )
+rotation = 1.5708
+scale = Vector2( 2, 4 )
+texture = ExtResource( 16 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/AdvanceAmount/LittleBar" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="BackChose" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer"]
+margin_top = 541.0
+margin_right = 600.0
+margin_bottom = 641.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/BackChose"]
+modulate = Color( 0.00392157, 0.509804, 1, 1 )
+position = Vector2( 300, 50 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/BackChose/CapsuleSelection" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/BackChose"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 40 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/BackChose/Label" instance=ExtResource( 5 )]
+colorId = 7
+
+[node name="ChoseAmount" type="Control" parent="InteractionSpace/MainTab/IncomeTab/AddTab"]
+visible = false
+margin_right = 720.0
+margin_bottom = 1560.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+position = Vector2( 359.439, 658.854 )
+scale = Vector2( 0.99819, 0.600029 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 620, 480 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/Background" instance=ExtResource( 5 )]
+colorId = 2
+
+[node name="Background2" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+position = Vector2( 359.439, 767.874 )
+scale = Vector2( 0.99819, 0.145776 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 620, 480 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/Background2" instance=ExtResource( 5 )]
+colorId = 5
+
+[node name="Background3" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+position = Vector2( 359.439, 623.874 )
+scale = Vector2( 0.99819, 0.145776 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 620, 480 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/Background3" instance=ExtResource( 5 )]
+colorId = 5
+
+[node name="BackAmount" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+margin_left = 222.0
+margin_top = 805.0
+margin_right = 346.0
+margin_bottom = 905.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/BackAmount"]
+modulate = Color( 0.00392157, 0.509804, 1, 1 )
+position = Vector2( 63, 50 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/BackAmount/CapsuleSelection" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/BackAmount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 40 )
+text = "Back"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/BackAmount/Label" instance=ExtResource( 5 )]
+colorId = 7
+
+[node name="DoneAmount" type="Button" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+margin_left = 366.0
+margin_top = 805.0
+margin_right = 490.0
+margin_bottom = 905.0
+rect_min_size = Vector2( 0, 100 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CapsuleSelection" type="Sprite" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/DoneAmount"]
+modulate = Color( 0.00392157, 0.509804, 1, 1 )
+position = Vector2( 63, 50 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 14 )
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/DoneAmount/CapsuleSelection" instance=ExtResource( 5 )]
+colorId = 4
+
+[node name="Label" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/DoneAmount"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 40 )
+text = "Done"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/DoneAmount/Label" instance=ExtResource( 5 )]
+colorId = 7
+
+[node name="HowMuch" type="LineEdit" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 60.0
+margin_top = 729.5
+margin_right = 660.0
+margin_bottom = 804.5
+rect_min_size = Vector2( 580, 75 )
+custom_styles/read_only = SubResource( 41 )
+custom_styles/focus = SubResource( 42 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = SubResource( 32 )
+align = 1
+placeholder_text = "amount"
+placeholder_alpha = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/HowMuch" instance=ExtResource( 5 )]
+colorId = 3
+
+[node name="HowMuchText" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 59.1091
+margin_top = 673.901
+margin_right = 659.109
+margin_bottom = 748.901
+rect_min_size = Vector2( 580, 75 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = SubResource( 32 )
+text = "How much"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/HowMuchText" instance=ExtResource( 5 )]
+colorId = 3
+
+[node name="Name" type="LineEdit" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 60.0
+margin_top = 585.5
+margin_right = 660.0
+margin_bottom = 660.5
+rect_min_size = Vector2( 580, 75 )
+custom_styles/read_only = SubResource( 41 )
+custom_styles/focus = SubResource( 42 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = SubResource( 32 )
+align = 1
+placeholder_text = "name"
+placeholder_alpha = 0.4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/Name" instance=ExtResource( 5 )]
+colorId = 3
+
+[node name="NameText" type="Label" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = 59.1091
+margin_top = 529.901
+margin_right = 659.109
+margin_bottom = 604.901
+rect_min_size = Vector2( 580, 75 )
+custom_styles/normal = SubResource( 43 )
+custom_fonts/font = SubResource( 32 )
+text = "Name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorTag" parent="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/NameText" instance=ExtResource( 5 )]
 colorId = 3
 
 [node name="ExpenseTab" type="Control" parent="InteractionSpace/MainTab"]
@@ -524,7 +1056,7 @@ margin_top = 400.0
 margin_right = 660.0
 margin_bottom = 1360.0
 rect_min_size = Vector2( 700, 1000 )
-theme = SubResource( 7 )
+theme = SubResource( 23 )
 scroll_horizontal_enabled = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -544,11 +1076,11 @@ __meta__ = {
 margin_right = 700.0
 margin_bottom = 75.0
 rect_min_size = Vector2( 700, 75 )
-custom_styles/hover = SubResource( 8 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = SubResource( 10 )
-custom_styles/disabled = SubResource( 11 )
-custom_styles/normal = SubResource( 12 )
+custom_styles/hover = SubResource( 24 )
+custom_styles/pressed = SubResource( 25 )
+custom_styles/focus = SubResource( 26 )
+custom_styles/disabled = SubResource( 27 )
+custom_styles/normal = SubResource( 28 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -565,7 +1097,7 @@ colorId = 4
 [node name="Label" type="Label" parent="InteractionSpace/MainTab/ExpenseTab/ScrollContainer/Expense/Add"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-custom_fonts/font = SubResource( 13 )
+custom_fonts/font = SubResource( 29 )
 text = "+"
 align = 1
 valign = 1
@@ -599,11 +1131,11 @@ margin_left = -720.0
 margin_right = -720.0
 margin_bottom = 0.00012207
 rect_min_size = Vector2( 720, 1560 )
-custom_styles/hover = SubResource( 30 )
-custom_styles/pressed = SubResource( 31 )
-custom_styles/focus = SubResource( 32 )
-custom_styles/disabled = SubResource( 33 )
-custom_styles/normal = SubResource( 34 )
+custom_styles/hover = SubResource( 44 )
+custom_styles/pressed = SubResource( 45 )
+custom_styles/focus = SubResource( 46 )
+custom_styles/disabled = SubResource( 47 )
+custom_styles/normal = SubResource( 48 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -648,11 +1180,11 @@ __meta__ = {
 margin_right = 620.0
 margin_bottom = 100.0
 rect_min_size = Vector2( 100, 100 )
-custom_styles/hover = SubResource( 35 )
-custom_styles/pressed = SubResource( 36 )
-custom_styles/focus = SubResource( 37 )
-custom_styles/disabled = SubResource( 38 )
-custom_styles/normal = SubResource( 39 )
+custom_styles/hover = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
+custom_styles/disabled = SubResource( 52 )
+custom_styles/normal = SubResource( 53 )
 
 [node name="Label" type="Label" parent="Menu/MenuTab/MenuTab/MainTabButton"]
 modulate = Color( 0, 0, 0, 1 )
@@ -680,11 +1212,11 @@ margin_top = 104.0
 margin_right = 620.0
 margin_bottom = 204.0
 rect_min_size = Vector2( 100, 100 )
-custom_styles/hover = SubResource( 40 )
-custom_styles/pressed = SubResource( 41 )
-custom_styles/focus = SubResource( 42 )
-custom_styles/disabled = SubResource( 43 )
-custom_styles/normal = SubResource( 44 )
+custom_styles/hover = SubResource( 54 )
+custom_styles/pressed = SubResource( 55 )
+custom_styles/focus = SubResource( 56 )
+custom_styles/disabled = SubResource( 57 )
+custom_styles/normal = SubResource( 58 )
 
 [node name="Label" type="Label" parent="Menu/MenuTab/MenuTab/ThemeButton"]
 modulate = Color( 0, 0, 0, 1 )
@@ -711,7 +1243,11 @@ colorId = 6
 [connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/ExpenseTab" to="InteractionSpace/MainTab/Tabs/Tabs1/ExpenseTab" method="_on_Button_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab" to="InteractionSpace/MainTab/Tabs/Tabs1/BudgetTab" method="_on_Button_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/BudgetTab/ScrollContainer/Sliders/Add" to="InteractionSpace/MainTab/BudgetTab/ScrollContainer/Sliders" method="_on_Add_pressed"]
-[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/Add" to="InteractionSpace/MainTab/IncomeTab/ScrollContainer/Incomes" method="_on_Add_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/Add" to="InteractionSpace/MainTab/IncomeTab" method="_on_Add_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/OneTimeAmount" to="InteractionSpace/MainTab/IncomeTab" method="_on_OneTimeAmount_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAdd/VBoxContainer/BackChose" to="InteractionSpace/MainTab/IncomeTab" method="_on_Back_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/BackAmount" to="InteractionSpace/MainTab/IncomeTab" method="_on_BackAmount_pressed"]
+[connection signal="pressed" from="InteractionSpace/MainTab/IncomeTab/AddTab/ChoseAmount/DoneAmount" to="InteractionSpace/MainTab/IncomeTab" method="_on_DoneAmount_pressed"]
 [connection signal="pressed" from="InteractionSpace/MainTab/ExpenseTab/ScrollContainer/Expense/Add" to="InteractionSpace/MainTab/ExpenseTab/ScrollContainer/Expense" method="_on_Add_pressed"]
 [connection signal="pressed" from="Menu/BackButton" to="Menu" method="_on_BackButton_pressed"]
 [connection signal="pressed" from="Menu/MenuTab/MenuTab/MainTabButton" to="Menu" method="_on_MainTabButton_pressed"]

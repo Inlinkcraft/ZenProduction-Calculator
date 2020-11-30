@@ -2,9 +2,16 @@
 # @author Inlinkcraft
 #
 
-extends Node2D
+extends Node
 
 # = VAR = #
 
-var totalBudget = 1000
-var budgetLeft = 1000
+var totalIncome = 0
+var totalExpense = 0
+var totalBudget = 0
+var budgetLeft = 0
+
+# = Func = #
+
+func _process(_delta):
+	totalBudget = totalIncome - totalExpense
